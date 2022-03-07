@@ -1,0 +1,25 @@
+<div
+    *ngIf="article"
+    
+  id="banner"
+  class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding" 
+  [style.background-image]="
+    'url(http://localhost:1337' + article.image + ')'
+  "
+  uk-img
+>
+  <h1>{{article.title}}</h1> 
+</div>
+
+<div class="uk-section" *ngIf="article ">
+  <div class="uk-container uk-container-small">
+    <p>
+      <markdown ngPreserveWhitespaces>
+        {{ article.content }}
+        
+      </markdown>
+    </p>
+    {{article.written}}
+    <p></p>
+  </div>
+</div>

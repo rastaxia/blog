@@ -1,21 +1,22 @@
 <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
-      <ul class="uk-navbar-nav">
-        <li class="uk-active"><a href="#">Blog</a></li>
-      </ul>
-    </div>
-  
-    <div class="uk-navbar-right">
-      <ul *ngIf="data" class="uk-navbar-nav">
-        <li *ngFor="let category of data.categories" class="uk-active">
-          <a
-            routerLink="/category/{{ category.id }}"
-            routerLinkActive="active"
-            class="uk-link-reset"
-          >
-           
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="#">Home</a></li>
+    </ul>
+  </div>
+
+  <div class="uk-navbar-right">
+    <ul *ngIf="category" class="uk-navbar-nav">
+      
+      <li *ngFor="let category of category" class="uk-active">
+        <a
+          routerLink="/category/{{ category.id }}"
+          routerLinkActive="active"
+          class="uk-link-reset"
+        >
+          {{ category.category }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
